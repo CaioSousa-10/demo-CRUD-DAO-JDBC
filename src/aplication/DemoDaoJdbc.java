@@ -24,5 +24,11 @@ public class DemoDaoJdbc {
         for (Seller seller1 : list) {
             System.out.println(seller1);
         }
+        
+        System.out.println(">>>> teste 3: seller findAll <<<<<");
+        list = sellerdao.findAll();
+        for (Seller seller2 : list) {
+            System.out.println(seller2);
+        }
     }
 }
