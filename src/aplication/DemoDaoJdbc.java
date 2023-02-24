@@ -13,6 +13,7 @@ public class DemoDaoJdbc {
 
    
     public static void main(String[] args) {
+        
         SellerDao sellerdao = DaoFactory.createSellerDao();
         System.out.println("->>>> teste 1: seller findById <<<<<<");
         Seller seller = sellerdao.findById(3);
@@ -36,5 +37,12 @@ public class DemoDaoJdbc {
         Seller sellerinsert = new Seller(null, "Rodrigo", "rodrigo@gmail.com", new Date(), 4000.00, new Department(2, "Serviço Social"));
         sellerdao.insert(sellerinsert);
         System.out.println("Inserted! New Id = " + sellerinsert.getId());
+        
+        System.out.println("");
+        System.out.println(">>>> teste 5: seller update <<<<");
+        seller = sellerdao.findById(1);
+        seller.setName("Keila Gusmao");
+        sellerdao.update(seller);
+        System.out.println("Update completed!!!!");
     }
 }
